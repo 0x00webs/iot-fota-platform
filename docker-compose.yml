@@ -1,0 +1,3 @@
+include:
+  - path: ./docker/mqtt/docker-compose.yml
+  - path: ./docker/rabbitmq/docker-compose.yml

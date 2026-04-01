@@ -1,0 +1,20 @@
+services:
+  # RabbitMQ Service
+  rabbitmq:
+    image: ${RABBITMQ_IMAGE} # Using RabbitMQ with management plugin
+    container_name: ${RABBITMQ_CONTAINER_NAME}
+    # environments from .env file
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    ports:
+      - '${RABBITMQ_PORT}:${RABBITMQ_PORT}' # Default RabbitMQ port
+      - '${RABBITMQ_MANAGEMENT_PORT}:${RABBITMQ_MANAGEMENT_PORT}' # Management UI port
+    networks:
+      - fota_network
+    volumes:
+      - ${RABBITMQ_DATA_DIR}:/var/lib/rabbitmq:rw
+    restart: unless-stopped
+networks:
+  fota_network:
+    driver: bridge

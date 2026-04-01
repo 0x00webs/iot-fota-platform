@@ -1,0 +1,23 @@
+services:
+  # MQTT Broker Service
+  mqtt-broker:
+    image: ${MQTT_IMAGE}
+    container_name: ${MQTT_CONTAINER_NAME}
+    environment:
+      MOSQUITTO_LOG_LEVEL: ${MQTT_LOG_LEVEL}
+    ports:
+      - '${MQTT_PORT}:${MQTT_PORT}' # Default MQTT port
+      - '${MQTT_TLS_PORT}:${MQTT_TLS_PORT}' # TLS port
+      - '${MQTT_WS_PORT}:${MQTT_WS_PORT}' # Default MQTT port for WebSockets
+    networks:
+      - fota_network
+    volumes:
+      # Mount config, data, and log directories
+      - ${MQTT_CONFIG_DIR}:/mosquitto/config
+      - ${MQTT_CERTS_DIR}:/mosquitto/certs:ro
+      - ${MQTT_DATA_DIR}:/mosquitto/data:rw
+      - ${MQTT_LOG_DIR}:/mosquitto/log:rw
+    restart: unless-stopped
+networks:
+  fota_network:
+    driver: bridge
