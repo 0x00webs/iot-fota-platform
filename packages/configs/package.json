@@ -1,11 +1,11 @@
 {
-  "name": "@fota/types",
+  "name": "@fota/configs",
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
+	"@types/bun": "latest"
   },
   "peerDependencies": {
-    "typescript": "^6.0.2"
+	"typescript": "^6.0.2"
   }
 }
