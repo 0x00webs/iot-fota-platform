@@ -9,6 +9,7 @@
 	  "DOM",
 	  "DOM.Iterable"
 	],
+	"types": ["node", "bun"],
 	"strict": true,
 	"experimentalDecorators": true,
 	"emitDecoratorMetadata": true,

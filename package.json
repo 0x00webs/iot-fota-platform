@@ -13,8 +13,15 @@
     "test": "bun test --workspaces"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/bun": "latest",
+    "@types/node": "^25.5.0",
     "bun-workspaces": "^1.1.2",
-    "typescript": "^6.0.2"
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.4.0",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.0",
+    "eslint": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8"
   }
 }

@@ -2,7 +2,11 @@
   "name": "@fota/contracts",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+	"lint": "bun eslint . --fix"
+  },
   "devDependencies": {
+	"@fota/configs": "workspace:*",
 	"@types/bun": "latest"
   },
   "peerDependencies": {

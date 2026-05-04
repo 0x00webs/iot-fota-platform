@@ -1,1 +1,2 @@
-console.log("Hello via Bun!");
+// packages/configs/index.ts
+export * from "./create-eslint-config.js";

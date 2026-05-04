@@ -1,5 +1,5 @@
 export const sayHello = (name: string): string => {
-  return `Hello ${name}`
-}
+  return `Hello ${name}`;
+};
 
-export const API_PREFIX = 'api'
+export const API_PREFIX = "api";
